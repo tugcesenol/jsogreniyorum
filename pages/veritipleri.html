@@ -1,0 +1,98 @@
+﻿<!DOCTYPE>
+<html >
+<head>
+    <meta charset="utf-8">
+    <title> Veri Tipleri </title>
+    <link rel="stylesheet" href="../css/StyleSheet1.css">
+</head>
+<body>
+<div id="main">
+  <div id="right">
+    <div class="special">
+      <h1> JAVASCRIPT'TE VERİ TİPLERİ </h1>
+      <p> JavaScript dilinde birçok değişken türü bulunur. Bu değişken türleri içerisinde birçok veri tipi saklayabilir. Bu veri tiplerinden bazıları; sayısal, metin, mantıksal, dizeler ve objelerdir. </p> 
+    </div>
+    <div class="special">
+      <h3> String Veri Tipi (Metin)  </h3>
+      <p> String veri tipi içerisinde metinsel ifadeleri saklar. String veriler değişkenlere girilirken (“) tırnak işareti ya da (‘) kesme işareti kullanılır. </p>
+      <h4>
+        var isim=”tuğçe”;
+      </br>
+        var soyisim=’şenol’
+      </h4>
+    </div>
+<div class="special">
+      <h3> Number Veri Tipi(Sayısal)  </h3>
+      <p> Numbers veri tipi içerisinde sayısal değerleri tutmak için kullanılır. Değerler tanımlanırken (“) çift tırnak veya (‘) tek tırnak işaretine ihtiyaç yoktur. Ondalıklı sayı değeri tanımlanırken (.) nokta işareti kullanılır. </p>
+      <h4>
+        var a=1;   
+        </br>
+        var pi=3.14;
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Boolean Veri Tipi(Mantıksal)  </h3>
+      <p> Bazı ifadeler sadece iki alternatiflidir. İfade ya doğrudur(true) ya da yanlıştır(false). Bu tip değişkenlere boolean ifadeler ismi verilir. Mantıksal veriler koşul gerektiren ifadeler için kullanılır.</p>
+      <h4>
+        var a = true;  
+        </br>
+        var b = false;
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Array Verisi(Dizi)  </h3>
+      <p> Dizi bir veri tipinde birden fazla değer içerir. Dizi oluşturulurken köşeli parantez kullanılır ve değerler (,) ile ayrılır.</p>
+      <h4>
+        var sehir=[“İstanbul”,” Ankara”, ”İzmir”];  // Yazı dizisi
+        </br> 
+        var sayi=[ 11111, 222222, 333333];   // Sayı dizisi
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Veri İkilileri (Nesneler)  </h3>
+      <p> Nesneler alt değişken verilerini içerisinde tutar. Alt değişkenler sıralanırken kıvrım parantezler kullanılır. Değişkenler virgüllerle ayrılarak yazılır. </p>
+      <h4>
+        var site = {  isim:”veritipleri”, içerik:”eğitim” };
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Boş ve Tanımsız Veriler( Undefined & Null ) </h3>
+      <p> JavaScript dilinde değer içermeyen değişkenler bulunur. Bu değişkenler veri içermezler. Veri içermeyen değişken oluşturulurken var degişken seklinde oluşturulur. Yani sadece değişken ismi yazılır. (=) eşittir operatörü kullanılmaz. </p>
+      <h4>
+        var sehir;   // sehir değişkeni veri içermez.
+      </h4>
+      <p> Bazı durumlarda değişkenin içerisinde bulunan verinin silinmesi gerekir. Bunun için Null ifadesi kullanılır. </p>
+      <h4>
+        sehir = null;  // sehir değişkeninin içerisindeki veri silinir.
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Veri Türünü Tespit Etmek (typeof)  </h3>
+      <p> Typeof operatörü kullanılarak bir değişkenin türü sorgulanabilir. </p>
+      <h4>
+        typeof “internet teknolojileri”   //string
+        </br>
+        typeof “123”   //number
+        </br>
+        typeof true   //boolean
+        </br>
+        typeof [1855,4785,5412,5698]   //object
+        </br>
+        typeof {isim: ‘tuğçe’, içerik:”eğitim”}   //object
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Değişkenin Veri Türünü Değiştirmek  </h3>
+      <p> JavaScript veri türleri yeni değerler atanarak kolayca değiştirilebilir. Aşağıda a değişkeni içerisinde bulunan değer yeni bir değer almıştır. </p>
+      <h4>
+        var a = // tanımsız değer
+        </br>
+        var a= “tuğçe” // a string bir değer aldı.
+        </br>
+        Var a= 2020 // a sayısal bir değer aldı.
+      </h4>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Ödev 2 </title>
+		<meta charset="utf-8">
+	<style>
+		body{
+			background-color: #D1C4E9;
+		}
+		.harf {
+			width: 70px;
+			height: 70px;
+			margin-bottom:15px;
+			background-color: #E8EAF6;
+		}
+		.bharf{
+			width: 70px;
+			height: 70px;
+			margin-bottom:15px;
+			background-color: #E8EAF6;
+		}
+	</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="col-md-6">
+				<label for="daracagi"> Darağacı </label>
+				<textarea id="daracagi" class="form-control" rows="6" cols="22"></textarea>
+			</div>
+			<div class="col-md-6">
+				<label for="cikan-harf"> </br> Çıkan Harf </label>
+				<textarea id="cikan-harf" class="form-control" rows="6"></textarea>
+			</div>
+			<div class="col-md-12">
+				<div class="form-group">
+					<label for="cikankelime"> </br> Aranan Kelime</label>
+				</div>
+				<div class="form-group" id="yertutucu"></div>
+			</div>
+			<div class="col-md-6 col-md-offset-3">
+				<button type="button" class=" harf">A</button>
+				<button type="button" class=" harf">B</button>
+				<button type="button" class=" harf">C</button>
+				<button type="button" class=" harf">Ç</button>
+				<button type="button" class=" harf">D</button>
+				<button type="button" class=" harf">E</button>
+				<button type="button" class=" harf">F</button>
+				<button type="button" class=" harf">G</button>
+				<button type="button" class=" harf">Ğ</button>
+				<button type="button" class=" harf">H</button>
+				<button type="button" class=" harf">I</button>
+				<button type="button" class=" harf">İ</button>
+				<button type="button" class=" harf">J</button>
+				<button type="button" class=" harf">K</button>
+				<button type="button" class=" harf">L</button>
+				</br>
+				<button type="button" class=" harf">M</button>
+				<button type="button" class=" harf">N</button>
+				<button type="button" class=" harf">O</button>
+				<button type="button" class=" harf">Ö</button>
+				<button type="button" class=" harf">P</button>
+				<button type="button" class=" harf">R</button>
+				<button type="button" class=" harf">S</button>
+				<button type="button" class=" harf">Ş</button>
+				<button type="button" class=" harf">T</button>
+				<button type="button" class=" harf">U</button>
+				<button type="button" class=" harf">Ü</button>
+				<button type="button" class=" harf">V</button>
+				<button type="button" class=" harf">W</button>
+				<button type="button" class=" harf">Y</button>
+				<button type="button" class=" harf">Z</button>
+			</div>
+			<div class="col-md-6 col-md-offset-3"></div>
+		</div>
+	<script>
+		var adam = new Array("___\n", " |\n", " O\n", " /", "|", "\\\n", " /", " \\\n", "___");
+		var kelimeler= ["JAVASCRIPT"];
+		var kelime;
+		var hak=0;
+		var daragaci= document.getElementById("daracagi");
+		var cikanHarf= document.getElementById("cikan-harf");
+		var harfler= document.querySelectorAll(".harf");
+		(
+			function(){
+			harfler.forEach(function(gelen) {
+				gelen.onclick=function(olay){
+					this.setAttribute("disabled","disabled");
+					var durum= harfKontrol(kelime,this.textContent);
+					harfEkle(this.textContent);
+					if(durum) {
+						harfYerlestir(kelime,this.textContent);
+					} else {
+						daragaci.textContent+= adam[hak];
+						hak++;
+					}
+					var tireDurum=tireKontrol();
+					if(!tireDurum) {
+						window.alert("TEBRİKLER");
+						tumHarflerPasif();
+					}
+					if(adam.length<=hak) {
+						window.alert("ÖLDÜNÜZ");
+						tumHarfleriYaz(kelime);
+						tumHarflerPasif();
+					}
+				}
+			});
+			harfSec();
+		})();
+		kelimeUret.onclick=harfSec;
+		function harfSec(){
+			var sira=Math.round(Math.random()*kelimeler.length);
+			kelime=new String(kelimeler[sira]);
+			kelime=kelime.split("");
+			yertutucu(kelime);
+		}
+		function yertutucu(kelime) {
+			var yertutucu=document.getElementById("yertutucu");
+			yertutucu.innerHTML="";
+			daragaci.innerHTML="";
+			tumHarflerAktif();
+			hak=0;
+			for(var i=0;i<kelime.length;i++) {
+				var harf = document.createElement("button");
+				harf.setAttribute("type","button")
+				harf.classList.add("btn", "btn-primary", "bharf");
+				harf.textContent="_";
+				yertutucu.appendChild(harf);
+			}
+		}
+		function harfKontrol(kelime,harf) {
+			return kelime.some(x => x ==harf );
+		}
+		function harfYerlestir(kelime,harf) {
+			var bharfler= document.querySelectorAll(".bharf");
+			for(sira in kelime) {
+				if(harf==kelime[sira]) {
+					bharfler[sira].textContent=harf;
+				}
+			}
+		}
+		function tumHarfleriYaz(kelime) {
+			var bharfler= document.querySelectorAll(".bharf");
+			for(sira in kelime) {
+				harfYerlestir(kelime,kelime[sira]);
+			}
+		}
+		function tumHarflerPasif() {
+			harfler.forEach(function(eleman){
+			eleman.setAttribute("disabled","disabled");
+		});
+ 
+		}
+		function tumHarflerAktif() {
+			harfler.forEach(function(eleman){
+			eleman.removeAttribute("disabled");
+		});
+		}
+		function tireKontrol() {
+			var durum= false;
+			var bharfler= document.querySelectorAll(".bharf");
+			for(sira in bharfler){ 
+				if(bharfler[sira].textContent=="_") {
+					durum=true;
+				}
+			}
+			return durum;
+		}
+		function harfEkle(harf) {
+			cikanHarf.textContent=cikanHarf.textContent+" "+harf;
+		}
+	</script>
+	</body>
+</html>

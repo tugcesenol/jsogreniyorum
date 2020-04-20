@@ -1,0 +1,188 @@
+﻿<!DOCTYPE>
+<html >
+<head>
+    <meta charset="utf-8">
+    <title> Döngüler </title>
+    <link rel="stylesheet" href="../css/StyleSheet1.css">
+</head>
+<body>
+<div id="main">
+  <div id="right">
+    <div class="special">
+      <h1> JAVASCRIPT DÖNGÜLER </h1>
+      <p> Döngüler, bir işlemin art arda yapılması için hızlı ve kolay bir yöntem sunarlar. Birçok döngü türü vardır, fakat özünde hepsi aynı şeyi yaparlar: 
+        </br>
+        Ardı ardına belirlenen bir işlemi gerçekleştirirler. 
+        Genelde gerçekleştirilen işlem adımı 0'dan başlar. 
+        Döngünün bitiş ve başlangıç noktalarının belirlenmesi için çeşitli döngü mekanizmaları mevcuttur. 
+        Bir döngünün diğer döngülere göre daha avantajlı olmasını sağlayan farklı durumlar vardır.
+      </br>
+      JavaScript'teki döngü ifadeleri aşağıdaki şekilde listelenmiştir:
+      </br>
+      1- for döngüsü
+      </br>
+      2- do...while döngüsü
+      </br>
+      3- while döngüsü
+      </br>
+      4- Etiketlenmiş ifadeler
+      </br>
+      5- break ifadesi
+      </br>
+      6- continue ifadesi
+      </br>
+      7- for...in ifadesi
+      </br>
+      8- for...of ifadesi</p> 
+    </div>
+    <div class="special">
+      <h3> 1- For Döngüsü  </h3>
+      <p> Bir for döngüsü, belirlenen koşul sağlandığı sürece içerdiği komutların çalıştırılmasını sağlar. JavaScript'teki for döngüsü, Java ve C dilindeki for döngüsü ile benzerdir. For döngüsünün söz dizimi aşağıdaki şekildedir: </p>
+      <h4>
+        for ([başlangıçAtaması]; [koşulİfadesi]; [arttırımİfadesi]) 
+        </br>
+        ifade
+      </h4>
+      <p> Bir for döngüsündeki algoritmanın adımları aşağıdaki şekildedir:
+        </br>
+      1- Bir başlangıçAtaması ifadesi varsa çalıştırılır. Bu ifadede genellikle bir veya daha fazla döngü sayıcısına atama işlemi yapılır. Ayrıca değişken tanımı da yapılabilir.
+        </br>
+      2- koşulİfadesi çalıştırılır. Eğer koşulİfadesi değeri true ise, ifade çalıştırılabilir. Eğer koşulİfadesi değeri false ise, for döngüsünden çıkılır. Eğer koşulİfadesi boş geçilirse, değeri her zaman true olarak varsayılır ve sonsuz döngü oluşturulmuş olur.
+        </br>
+      3 - ifade çalıştırılır. Birden fazla ifade çalıştırılacaksa, ifadeleri gruplamak için blok ifadesi ({ ... }) kullanılır.
+        </br>
+      4- arttırımİfadesi varsa çalıştırılır ve 2 numaralı adıma geri dönülür.
+      </p>
+    </div>
+  <div class="special">
+      <h3> 2- do...while Döngüsü  </h3>
+      <p> do...while döngüsü, belirlenen bir koşul sağlandığı sürece döngünün çalıştırılmasına olanak tanır. Bir do...while döngüsü aşağıdaki gibidir: </p>
+      <h4>
+        do
+      </br>
+        ifade
+      </br>
+        while (koşul);
+      </h4>
+      <p> Koşul kontrol edilmeden hemen önce ifade çalıştırılır. Çoklu ifadelerin çalıştırılması için, blok ifadesi ({...}) kullanılarak ifadeler gruplandırılır. Eğer koşul sağlanırsa, ifade tekrar çalıştırılır. Çalıştırıldıktan sonra, koşul tekrar kontrol edilir. Eğer koşul sağlanmazsa, ifadenin çalıştırılması durdurulur ve do...while döngüsünden sonraki komutlar çalıştırılır. Koşul kontrol edilmeden hemen önce ifade çalıştırıldığı için, koşul değeri false olsa bile blok satırınız içerisindeki kodlar 1 defa çalıştırılır. </p>
+    </div>
+    <div class="special">
+      <h3> 3- While Döngüsü  </h3>
+      <p> Bir while döngüsü, belirlenen koşul sağlandığı sürece çalıştırılmaya devam eder. Örnek bir while döngüsü aşağıdaki gibidir: </p>
+      <h4>
+        while (koşul)
+      </br>
+        ifade
+      </h4>
+      <p> Döngü içerisindeki ifade çalıştırılmadan önce koşul kontrol edilir. Eğer koşul sağlanırsa, ifade çalıştırılır ve koşul tekrar kontrol edilir. Eğer koşul sağlanmazsa, döngü içerisindeki ifadenin çalıştırılması durdurulur ve while döngüsünden çıkılarak sonraki komutlar çalıştırılır. Çoklu ifadelerin çalıştırılması için, blok ifadesi ({...}) kullanılarak ifadeler gruplanır. </p>
+    </div>
+    <div class="special">
+      <h3> 4- Etiketlenmiş İfadeler  </h3>
+      <p> Bir etiketlenmiş ifadede , bir anahtar kelime ve bu kelimeye bağlı çalıştırılacak bir ifade bulunur.Anahtar kelime kullanılarak, program içerisindeki herhangi bir yerde, anahtar kelime ile ilişkili ifade çalıştırılabilir. Örneğin, bir döngü, anahtar kelime ile etiketlenerek, uygulama içerisindeki herhangi bir yerden çalıştırılabilir. Etiketlenmiş bir ifade aşağıdaki şekildedir: </p>
+      <h4>
+        etiket :
+      </br>
+        çalıştırılacak_ifade
+      </h4>
+      <p> Etiket adı, herhangi bir değişken adının aldığı şekilde değerler alabilir. Etiket ile tanımlanan çalıştırılacak_ifade içerisinde herhangi bir komut yer alabilir. </p>
+      <p> Bu örnekte, döngüyüİşaretle etiketi while döngüsünü tanımlar. </p>
+      <h4>
+        döngüyüİşaretle:
+      </br>
+        while (işaret == true) {
+        </br>
+          merhabaDünya();
+        </br>
+        }
+      </h4>
+    </div>
+    <div class="special">
+      <h3> 5- break İfadesi  </h3>
+      <p> break ifadesi kullanılarak bir döngüden, switch ifadesinden veya herhangi bir etiketlenmiş ifadeden çıkılabilir.Etiket olmayan bir blokta break ifadesini kullandığınızda, break'i çevreleyen en içteki while, do-while, for, veya switch ifadesinden çıkılır ve koddaki sonraki komutların çalıştırılmasına devam edilir. Etiket olan bir blokta break ifadesini kullanıldığında, etiketlenmiş olan ifadeden çıkılır. break ifadesinin söz dizimi aşağıdaki gibidir: </p>
+      <h4>
+        break [etiket];
+      </h4>
+      <p> Bu söz diziminin ilk ifadesi (break) ile, break'i çevreleyen en içteki döngü veya switch'ten çıkılır; ikinci ifade ([etiket]) ile belirlenen etiketten çıkılması sağlanır.
+      </br> 
+      Aşağıdaki örnekte, değer'e eşit olan dizi elemanı bulununcaya dek dizi içerisindeki elemanlar bir döngüde gezilir. </p>
+      <h4>
+        for (var i = 0; i < a.length; i++) {
+        </br>
+            if (a[i] == değer) {
+            </br>
+                break;
+                </br>
+            }
+            </br>
+        }
+      </h4>
+    </div>
+    <div class="special">
+      <h3> 6- continue İfadesi  </h3>
+      <p> continue ifadesi; while, do-while, for, veya etiketlenmiş ifadelere tekrar girilmesini sağlar.continue ifadesini herhangi bir etiket belirtmeden tek başına kullanırsanız, kendisini çevreleyen döngü bloğundaki sonraki ifadelerin çalıştırılmasını sonlandırır, ve sonraki iterasyon ile birlikte döngünün çalışmasına devam edilir. continue, break ifadesinin tam tersine döngüyü tamamen sonlandırmaz. Örneğin while döngüsünde, koşul kontrolüne geri döner. for döngüsünde ise arttırım-ifadesi'ne döner. continue ifadesi bir etiket ile kullanılırken, etiket ile tanımlı olan döngünün devam etmesini sağlar. continue ifadesinin söz dizimi aşağıdaki gibidir: </p>
+      <h4>
+      continue [etiket];
+      </h4>
+      <p> Aşağıdaki örnekte yer alan while döngüsündeki continue ifadesi, i'nin değeri yalnızca 3 olduğunda çalıştırılmaktadır. Böylece n, sırasıyla şu değerleri alır: 1, 3, 7, 12. </p>
+      <h4>
+        var i = 0;
+        </br>
+        var n = 0;
+        </br>
+        while (i < 5) {
+        </br>
+          i++;
+          </br>
+          if (i == 3) {
+          </br>
+            continue;
+            </br>
+          }
+          </br>
+         n += i;
+        }
+      </h4>
+    </div>
+    <div class="special">
+      <h3> 7- for...in İfadesi </h3>
+      <p> for...in döngüsü, bir nesnenin sayılabilir (enumerable) özelliklerinin üzerinde dolaşılmasını sağlar. Her bir özellik için JavaScript, belirlenen ifadeleri çalıştırır. Bir for...in döngüsü aşağıdaki şekilde oluşturulur: </p>
+      <h4>
+        for (değişken in nesne) {
+        </br>
+            çalıştırılacak_ifadeler
+            </br>
+        }
+      </h4>
+      <p> Aşağıdaki fonksiyon, bir nesne ve nesnenin adını parametre olarak alır. Sonrasında nesnenin tüm özellikleri üzerinde gezer ve nesnede bulunan özelliklerin adını ve değerini listeleyen bir string döndürür.  </p>
+      <h4>
+        function özellikleriListeOlarakVer(nesne, nesnenin_adi) {
+        </br>
+        var sonuç = "";
+        </br>
+        for (var i in nesne) {
+        </br>
+          sonuç += nesnenin_adi + "." + i + " = " + nesne[i] + "<br>";
+          </br>
+        }
+        </br>
+        sonuç += "";
+        </br>
+        return sonuç;
+        </br>
+        }
+      </h4>
+    </div>
+    <div class="special">
+      <h3> 8- for...of İfadesi  </h3>
+      <p> for...of ifadesi bir döngü oluşturur ve gezilebilir (iterable) nesneler (Array, Map, Set, arguments nesnesi vb.) üzerinde gezer. </p>
+      <h4>
+        for (değişken of nesne) {
+      </br>
+  		çalıştırılacak_ifadeler
+	}
+      </h4>
+    </div>
+  </div>
+</div>
+</body>
+</html>

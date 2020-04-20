@@ -1,0 +1,172 @@
+﻿<!DOCTYPE>
+<html >
+<head>
+    <meta charset="utf-8">
+    <title> Tip Dönüşümleri </title>
+    <link rel="stylesheet" href="../css/StyleSheet1.css">
+</head>
+<body>
+<div id="main">
+  <div id="right">
+    <div class="special">
+      <h1> JAVASCRIPT TİP DÖNÜŞÜMLERİ </h1>
+      <p> Javascript tip dönüşümlerini otomatik olarak kendisi yapabileceği gibi Number ile number türüne, String ile string türüne, Boolean ile boolean türüne dünüşüm yapılabilir. Javascript değişken tipleri; 
+        </br>
+       1- string
+      </br>
+        2- number
+      </br>
+        3- boolean
+      </br>
+        4- object
+      </br>
+        5- function
+      </br>
+      Javascript'te 3 farklı nesne türü vardır;
+      </br>
+      1- object
+      </br>
+      2- date
+      </br>
+      3- array
+      </br>
+      Javascript'te değer içermeyen 2 değişken türü vardır;
+      </br>
+      1- null
+      </br>
+      2- undefined
+      </p> 
+    </div>
+    <div class="special">
+      <h3>    </h3>
+      <p> Javascript değişkenleri yeni bir değişkene veya başka bir değişken türüne dönüştürmek için ;
+      </br>
+      Javascript tip dönüşüm fonksiyonları veya javascript ile otomatik olarak dönüştürebiliriz.
+      </p>
+    </div>
+    <div class="special">
+      <h3> Sayı Veri Türünü Metin Veri Türüne Dönüştürme  </h3>
+      <p> Sayıları metin veri türüne dönüştürmek için String fonksiyonu kullanılabilir. </p>
+      <h4>
+        var xSayisi = 1453;
+        </br>
+        alert(String(xSayisi));
+        </br>
+        alert(String(123));
+        </br>
+        alert(String(100 + 23));
+      </h4>
+      <p> Sayı veri türünün toString fonksiyonu sayıları metin veri türüne dönüştürür. </p>
+      <h4>
+      var xSayisi = 1453;
+      </br>
+      alert(xSayisi.toString());
+      </br>
+      alert((123).toString());
+      </br>
+      alert((100 + 23).toString());
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Mantık Veri Türünü Metin Veri Türüne Dönüştürme </h3>
+      <p> Mantık veri türünü metin veri türüne dönüştürmek için String fonksiyonu kullanılabilir. </p>
+      <h4>
+        alert(String(false));
+        </br>
+        alert(String(true));
+      </h4>
+      <p> Mantık veri türünü metin veri türüne dönüştürmek için toString fonksiyonu kullanılabilir. </p>
+      <h4>        
+        alert(false.toString());
+        </br>
+        alert(true.toString());
+      </h4> 
+    </div>
+    <div class="special">
+      <h3> Tarih Veri Türünü Metin Veri Türüne Dönüştürme </h3>
+      <p> Tarih veri türünü metin veri türüne dönüştürmek için String fonksiyonu kullanılabilir. </p>
+      <h4>
+        alert(Date());
+      </h4>
+      <p> Tarih veri türünü metin veri türüne dönüştürmek için toString fonksiyonu kullanılabilir. </p>
+      <h4>
+        alert(Date().toString());
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Metin Veri Türünü Sayı Veri Türüne Dönüştürme </h3>
+      <p> Metin veri türünü sayı veri türüne dönüştürmek için Number fonksiyonu kullanılabilir. Metin veri türü değeri boş ise 0'a, diğer tüm metin türü değerleri Nan değerine dönüşür. </p>
+      <h4>
+        alert(Number("3.14"));
+        </br>
+        alert(Number(" "));
+        </br>
+        alert(Number(""));
+        </br>
+        alert(Number("99 98"));
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Mantık Veri Türünü Sayı Veri Türüne Dönüştürme </h3>
+      <p> Mantık veri türünü sayı veri türüne dönüştürmek için Number fonksiyonu Kullanılabilir. </p>
+      <h4>
+        alert(Number(false));
+        </br>
+        alert(Number(true));
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Tarih Veri Türünü Sayı Veri Türüne Dönüştürme </h3>
+      <p> Tarih veri türünü sayı veri türüne dönüştürmek için Number fonksiyonu kullanılabilir. </p>
+      <h4>
+        var tarih = new Date();
+      </br>
+        alert(Number(new Date()));
+      </br>
+        alert(Number(tarih));
+      </h4>
+      <p> Tarih veri türünün getTime fonksiyonu tarih veri türünü sayı veri türüne dönüştürür. </p>
+      <h4>
+        var tarih = new Date();
+      </br>
+        alert(tarih.getTime());
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Otomatik Tip Dönüşümü  </h3>
+      <p> Javascript farklı veri türleri üzerinden işlem yapıldığında veri türünü otomatik olarak doğru veri türüne dönüştürmeye çalışır. Ancak sonuç her zaman doğru olmayabilir. </p>
+      <h4>
+        alert(5 + null);    // 5
+        </br>
+         alert("5" + null);  // "5null"
+        </br>
+        alert("5" + 2);     // 52
+        </br>
+        alert("5" - 2);     // 3
+        </br>
+        alert("5" * "2");   // 10
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Otomatik Metin Veri Türüne Dönüştürme  </h3>
+      <p> Javascript bir nesneyi veya değişkeni ekrana yazdırmaya calıştığınızda toString fonksiyonunu otomatik olarak çalıştırır. </p>
+      <h4>
+        alert({name:"Fjohn"});  // [object Object]
+        </br>
+        alert([1,2,3,4]);       // 1,2,3,4
+        </br>
+         alert(new Date(0));     // Thu Jan 01 1970 03:00:00 GMT+0300
+      </h4>
+      <p> Sayı mantık veri türünü de dönüştürür ancak bu dönüşüm pek fark edilmez. </p>
+      <h4>
+      alert(123);    // 123
+      </br>
+      alert(true);   // true
+      </br>
+      alert(false);  // false
+      </h4>
+    </div>
+  </div>
+</div>
+</body>
+</html>

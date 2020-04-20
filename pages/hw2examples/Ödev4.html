@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Ödev 4 </title>
+        <meta charset="utf-8">
+    <style>
+        body{
+            background-image: url("https://digitalage.com.tr/wp-content/uploads/2019/11/turkiyede-online-alisveris-arastirma.jpg");
+            background-size: 1600px;
+        }
+        #main2{
+            width: 380px; 
+            height: 250px;
+            margin: 20px;
+        }
+    </style>
+    </head>
+    <body>
+        <div id = "main" style = "background-color: #eee; text-align: center;">
+            <h1> Alış Veriş Listesi </h1>
+        </div>
+        <div id = "main2" style = "background-color: #eee;">
+            <h2> Bugün Alınacaklar: </h2>
+            <p> </p>
+        </div>
+        <textarea id="textarea" rows="2" cols="53"></textarea>
+        <button onclick="yenielementekle()"> Yeni Ürün Ekle </button>
+        <button onclick="elementsil()"> Ürün Sil </button>
+    <script>
+        function yenielementekle(){
+            var metin = document.getElementById("textarea").value;
+            var yenielement = document.createElement("p");
+            var içerik = document.createTextNode(metin);
+            yenielement.appendChild(içerik);
+            var main2 = document.getElementById("main2");
+            main2.appendChild(yenielement);
+        }
+        function elementsil(){
+            var elementler = document.getElementsByTagName("p");
+            if (elementler.length!=0) {
+                var element = elementler[elementler.length-1];
+                var anne = element.parentNode;
+                anne.removeChild(element);
+            }
+        }
+    </script>
+    </body>
+</html>

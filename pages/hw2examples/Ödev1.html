@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Ödev 1 </title>
+        <meta charset="utf-8">
+    <style>
+        .ödev{
+            color: #ccc;
+            background-color: #a23a; 
+        }
+    </style>
+    </head>
+    <body>
+        <div id = "main" style = "background-color: #eee;">
+            <h3> Elementlere Dinamik Olarak Özellik Ekleme ve Silme </h3>
+            <p> Bu sayfada; WEB sayfalarına dinamik olarak HTML elementleri ekleme ve silme , sayfadaki HTML özelliğini değiştirme için gerekli javascript fonksiyonları bulunuyor. </p>
+            <a id = "etiket"> Yenile </a>
+        </div>
+        <textarea id="textarea" rows="10" cols="30"></textarea>
+        <button onclick="yenielementekle()"> Yeni Element Ekle </button>
+        <button onclick="elementsil()"> Sil </button>
+        <button onclick="değiştir()"> Değiştir </button>
+    <script>
+        function yenielementekle(){
+            var metin = document.getElementById("textarea").value;
+            var yenielement = document.createElement("p");
+            var içerik = document.createTextNode(metin);
+            yenielement.appendChild(içerik);
+            var main = document.getElementById("main");
+            main.appendChild(yenielement);
+        }
+        function elementsil(){
+            var elementler = document.getElementsByTagName("p");
+            if (elementler.length!=0) {
+                var element = elementler[elementler.length-1];
+                var anne = element.parentNode;
+                anne.removeChild(element);
+            }
+        }
+        function değiştir(){
+            var elementler = document.getElementsByTagName('h3');
+            var i =0;
+            for (; i<elementler.length; i++){
+                var ozellik = document.createAttribute("class");
+                ozellik.value = "ödev";
+                elementler[i].setAttributeNode(ozellik);
+            }
+            var hrefozellik = document.createAttribute("href");
+            hrefozellik.value = "Ödev1.html";
+            document.getElementById("etiket").setAttributeNode(hrefozellik);
+        }
+	</script>
+	</body>
+</html>

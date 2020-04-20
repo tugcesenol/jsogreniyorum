@@ -1,0 +1,91 @@
+﻿<!DOCTYPE>
+<html >
+<head>
+    <meta charset="utf-8">
+    <title> Değişkenler </title>
+    <link rel="stylesheet" href="../css/StyleSheet1.css">
+</head>
+<body>
+<div id="main">
+  <div id="right">
+    <div class="special">
+    <h1> DEĞİŞKENLER </h1>
+      <p> Variables, değişkenler, herhangi değeri saklayabileceğiniz ve ismini kendimizin belirlediği bir nevi veri depolarıdır. Bir değişkeni tanımlamaya var, let anahtar kelimesi kullanarak başlanılır, ardından da değişkenin ismi yazılır. </p>
+      <h4>
+        var myVariable; 
+      </h4>
+      <p> JavaScript değişkenleri, veri değerlerini saklamak için kullanılan kaplardır. </p>
+  </div>
+    <div class="special">
+      <h3> JavaScript Değişkenlerini Bildirme (Oluşturma)  </h3>
+      <p> JavaScript'te bir değişken oluşturmaya "değişken" bildirme denir. "varAnahtar" kelimeyle bir JavaScript değişkeni bildirirsiniz: </p>
+        <h4>
+      </br>
+      var carName;
+    </h4>
+      <h4>
+      	Bir değişkeni tanımladıktan sonra ona bir değer verebilirsiniz.
+      </br>
+        myVariable = 'Bob';  
+        </br>
+        Bu işlemleri dilerseniz tek satırda da yapabilirsiniz.
+        </br>
+        var myVariable = 'Bob';  
+        </br>
+        Bir değişkenin sadece ismini yazarak çağırabilirsiniz.
+        </br>
+        myVariable;  
+        </br>
+        Bir değişkene daha önce bir değer verdikten sonra bu değeri değiştirebilirsiniz.
+        </br>
+        var myVariable = 'Bob';  
+        myVariable = 'Steve';  
+      </h4>
+    </div>
+    <div class="special">
+      <h3> String </h3>
+      <p> String tipindeki değişkene veya String türündeki nesnenin metot ve özelliklerine, string değişkenin sonuna nokta ( . )  koyarak erişebiliriz ve çalıştırabiliriz. Eğer değişkeniniz string tipinde değişken (primitif) ise JavaScript otomatik olarak bu string tipindeki değişkeni geçici bir String türündeki bir nesneye dönüştürür ve metodu çağırır daha sonra da geçici olarak oluşturulan bu String nesnesi hafızadan silinir. Ayrıca String.length özelliğini de string tipindeki değişkenlerin sonuna ekleyerek kullanabilirsiniz. </p>
+      <h4>
+        console.log("Zafer'in kedisi".length); 
+        </br>  
+        // Boşluk da dahil olmak üzere, string içerisindeki tüm sembollerin sayısını ekrana yazar.  
+        </br>
+        // Ekrana yazılan değer: 15  
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Tam Sayılar ve Ondalık Değerler </h3>
+      <p> Tam Sayılar; </p>
+      <h4>
+       0, 117 and -345 (onluk, 10 tabanında)  
+       </br> 
+      015, 0001 and -077 (sekizlik, 8 tabanında)   
+      </br> 
+      0x1123, 0x00111 and -0xF1A7 (onaltılık, "hex" veya 16 tabanında)  
+      </br> 
+      0b11, 0b0011 and -0b11 (ikilik, 2 tabanında)  
+      </h4>
+      <p> Ondalık Değerler; </p>
+      <h4>
+      [(+|-)][rakamlar][.rakamlar][(E|e)[(+|-)]rakamlar] 
+      </br> 
+      3.1415926  
+      </br>
+      -.123456789
+      </br>  
+      -3.1E+12
+      </br>  
+      .1e-23  
+      </h4>
+    </div>
+    <div class="special">
+      <h3> Dizi Değerler </h3>
+      <p> Bir dizi değeri 0 (sıfır) veya daha fazla ifadeden oluşan bir liste biçimindeki değişkenlerdir. Liste başında ve sonunda listeyi açıp/kapatan köşeli parantezler [  ] bulunur. Bir dizi oluşturup bu diziye değerler atadığınızda, belirlediğiniz değerleri kendi elemanı olarak barındıran bir dizi üretilir ve dizinin uzunluğu belirlediğiniz değer sayısı kadardır. </p>
+      <h4>
+        var kahveler = ["Türk kahvesi", "Espresso", "Mocha"];  
+      </h4>
+    </div>
+  </div>
+</div>
+</body>
+</html>

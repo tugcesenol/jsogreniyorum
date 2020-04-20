@@ -1,0 +1,103 @@
+﻿<!DOCTYPE>
+<html >
+<head>
+    <meta charset="utf-8">
+    <title> Nesne Kullanımı </title>
+    <link rel="stylesheet" href="../css/StyleSheet1.css">
+</head>
+<body>
+  <div id="main">
+    <div id="right">
+      <div class="special">
+        <h1> JAVASCRIPT NESNE KULLANIMI </h1>
+        <p> Javascript dünyası her ne kadar client taraflı uygulamalar için geliştirilmiş bir dil olsa da kullanıcılara nesnelerin tanımlanabildiği ve kullanılabildiği bir ortam sunmaktadır. Javscript içerisinde tanımlı kendine ait bazı nesneleri şu şeklide sıralayabiliriz;  
+        </br>
+        1- String
+        </br>
+        2- Date
+        </br>
+        3- Mantıksal operatörler
+        </br>
+        4- Math
+        </br>
+        5- JSON vs. Bu nesnelerin yanında kendimiz de nesneler tanımlayıp kullanabiliriz.
+       </p> 
+      </div>
+      <div class="special">
+        <h3> Nesne Oluşturulması  </h3>
+        <p> Javascript, standart olarak Object adında bir nesne sunar. Oluşturulan nesneler de Object türündedir. Örneğin bir nesnenin oluşturulmasını şu şekilde yapabiliriz; </p>
+        <h4>
+        var bankAccount = new Object();
+        </h4>
+        <p> Bu şekilde herhangi bir üyesi bulunmayan ve sadece “Object” tipine ait üyeleri barındıran bir bankAccount nesnesi oluşturmuş olduk. Bu nesneyi daha basit bir şekilde aşağıdaki gibi tanımlayabiliriz. </p>
+        <h4>
+        var bankAccount = {};
+        </h4>
+        <p> Yani Object anahtar kelimesini kullanmadan da tanımlama yapmak mümkündür. </p>
+      </div>
+      <div class="special">
+        <h3> Nesnelere Property Eklenmesi  </h3>
+        <p> Oluşturduğumuz nesnelere property eklenmesi işlemini aşağıdaki şeklide gerçekleştirebiliriz. </p>
+        <h4>
+        var bankAccount = {};
+        </br>
+        bankAccount.number = 114521;
+        </h4>
+        <p> Nesnelere bir değer veya fonksiyonu property olarak belirleyebiliriz. Bir property eğer bir fonksiyonu işaret ediyorsa ona metod diyebiliriz. </p>
+        <h4>
+          var bankAccount = {};
+          </br>
+          bankAccount.number = 114521;
+          </br>
+          bankAccount.owner = "Bayram Üçüncü";
+          </br>
+          bankAccount.balance = 500;
+          </br>
+          bankAccount.details = function () {
+          </br>
+          return "Account: " + this.number + " belongs to " + this.owner + "\nBalance: " + this.balance;
+          </br>
+          };
+        </h4>
+        <p> Yukarıda tanımladığımız bankAccount nesnesine ait “details” isimli property bir metoddur. Metodlar içerisinde kullanılan "this" anahtar kelimesi metodun ait olduğu nesneyi ifade eder. Bu sebeple yukaridaki "details" metodu içerisinden diğer üyelere "this" anahtar kelimesi ile ulaşabilmekteyiz. Metod içerisinden "this" anahtar kelimesini kullanmadan bir üyeye erişmeye çalışırsak hata ile karşılaşırız. </p>
+      </div>
+      <div class="special">
+        <h3> Nesnelerin Prototiplerinin Kullanılması  </h3>
+        <p> Javascript Object tipinde bulunan "prototype" adlı özel bir metod, tüm nesnelerde bulunur. Bu metod sayesinde nesnelere yeni property veya metodlar ekleyebilirsiniz. Constructor fonksiyonları ile kendi özel tiplerimizi oluşturmamız mümkündür. Oluşturduğumuz tipe ait iki farklı nesne örneği oluşturacağımızda her bir nesne örneği kendi property kümesini bünyesinde barındırır. Bu durum, veri tutucu property’ler için makul görünse de metodlar için bir sorun haline gelebilir. Metodlarımızı oluşturduğumuz tip içerisinden ayırabiliriz. </p>
+        <p> Örnek-1: Prototype kullanılmadan; </p>
+        <h4>
+        var Rectagle = function (x,y) {
+        </br>
+        this.x = x;
+        </br>
+        this.y = y;
+        </br>
+        this.Area = function() { return x*y; };
+        </br>
+        };
+        </h4>
+        <p> Örnek-2: Prototype kullanarak; </p>
+        <h4>
+        var Rectangle = function (x, y) {
+        </br>
+        this.x = x;
+        </br>
+        this.y = y;
+        </br>
+        };
+        </br>
+        </br>
+        Rectangle.prototype = {
+        </br>
+        Area: function() { return (this.x * this.y); }
+        </br>
+        };
+        </h4>
+        <p> Bu bize ne fayda sağlamıştır?
+        </br> 
+        Örnek-1 de constructor içinde tanımlanan fonksiyon için her Rectangle nesnesi oluşturulduğunda bellekte anonim bir fonksiyon oluşturulacak ve yer tutacak. Ancak Örnek-2 de durum farklı olacaktır. Prototype property’ler static olduklarından her Rectangle nesnesi prototype içine tanımlanan metodları referans olarak görecektir. </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Ödev 3 </title>
+        <meta charset="utf-8">
+    <style>
+        #uyelik_formu {
+            padding: 10px;
+            width: 400px;
+            border: 10px solid #D1C4E9;
+        }  
+        label {          
+            float: left;
+            width: 150px;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="uyelik_formu">
+            <form name = "uye_formu" onsubmit = "return isValid(this)">
+                <label>Kullanıcı Adı: </label>
+                <input type = "text" name = "ad">
+
+                <label>TC Kimlik No: </label>
+                <input type="text" name = "tck">
+    
+                <label>Şifre: </label>
+                <input type="password" name = "sifre1">
+   
+                <label>Şifre (Tekrar): </label>
+                <input type="password" name = "sifre2">
+      
+                <label>E-Mail: </label>
+                <input type="text" name = "email">
+       
+                <input type="submit" value = "Kaydet">
+            </form>
+        </div>
+    <script>
+        function isValid(frm) {
+            var ad = frm.ad.value;
+            var tck = frm.tck.value;
+            var sifre1 = frm.sifre1.value;
+            var sifre2 = frm.sifre2.value;
+            var email = frm.email.value;
+            var atpos=email.indexOf("@");
+            var dotpos=email.lastIndexOf(".");
+            if ( ad==null || ad=="" || ad.length < 2 ) {
+                alert("Kullanıcı Adı 2 Karakterden Az Olamaz.");
+                return false;
+            }
+            if ( tck==null || tck=="" || tck.length < 11 ) {
+                alert("TC Kimlik No Adı 11 Karakterden Az Olamaz.");
+                return false;
+            }
+            if ( sifre1 == null || sifre1 == "" || sifre2 == null || sifre2 == "") {
+                alert("Şifreyi Boş Bırakmayın.");
+                return false;
+            }
+            if ( !(sifre1 == sifre2) ) {
+                alert("Şifreler Eşleşmiyor.");
+                return false;
+            }
+            if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length ) {
+                alert("Geçerli Email Adresi Girin.");
+                return false;
+            }      
+            return true;
+        }
+    </script>
+    </body>
+</html>

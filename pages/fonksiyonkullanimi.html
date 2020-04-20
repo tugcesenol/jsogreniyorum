@@ -1,0 +1,128 @@
+﻿<!DOCTYPE>
+<html >
+<head>
+    <meta charset="utf-8">
+    <title> Fonksiyon Kullanımı </title>
+    <link rel="stylesheet" href="../css/StyleSheet1.css">
+</head>
+<body>
+  <div id="main">
+    <div id="right">
+      <div class="special">
+        <h1> JAVASCRIPT FONKSİYON KULLANIMI </h1>
+        <p> Foksiyonlar, JavaScript'in en temel yapıtaşlarından biridir. Her bir fonksiyon, bir JavaScript işlemidir. Herhangi bir görevi yerine getiren  veya değer hesaplayan bir ifade kümesini içerirler. Bir fonksiyonu kullanmak için, fonksiyonu çağıracağınız kısmın faaliyet gösterdiği alanda fonksiyonu tanımlıyor olmanız gerekmektedir. </p>
+      </div>
+      <div class="special">
+        <h3> Fonksiyon Tanımlamaları  </h3>
+        <p> Bir fonksiyon tanımı (fonksiyon betimlemesi, veya fonksiyon ifadesi de denir)  function anahtar kelimesinden sonra aşağıdaki kısımları içerir:
+        </br>
+        - Fonksiyonun adı.
+        </br>
+        - Fonksiyonun aldığı parametreler (parantezler ile çevrili ve virgüller ile birbirinden ayrılmış olmalıdırlar).
+        </br>
+        - Çalıştırılacak JavaScript ifadeleri (süslü parantezler ile çevrilmelidir).
+        </br>
+        Örneğin aşağıdaki kodda karesiniAl isimli basit bir fonksiyon tanımlanmıştır: </p>
+        <h4>
+        function karesiniAl(sayı) {
+        </br>
+        return sayi * sayi;
+        </br>
+        }
+        </h4>
+        <p> karesiniAl fonksiyonu, sayı isminde tek bir parametre içerir. Tek bir ifade içeren fonksiyonda, sayı parametresinin kendisi ile çarpılıp geri döndürülmesi işlemi yapılmıştır. "return" ifadesi, fonksiyon tarafından döndürülen değeri belirler.</p>
+      </div>
+<div class="special">
+      <h3> Fonksiyon İfadeleri  </h3>
+      <p>  fonksiyonlar ayrıca bir fonksiyon ifadesi ile de oluşturulabilirler. Böyle bir fonksiyon anonim olabilir; bir isme sahip olmak zorunda değildir. Örnek olarak, matematikteki kare alma fonksiyonu aşağıdaki şekilde tanımlanabilir: </p>
+        <h4>
+          var karesiniAl = function(sayı) { return sayı * sayı };
+        </br>
+          var x = karesiniAl(4) // x'in değeri 16 olur.
+        </h4>
+        <p> Fonksiyon ifadesi ile belirtilen fonksiyon adı, fonksiyonun içerisinde kendisini çağıracak şekilde kullanılabilir: </p>
+        <h4>
+          var faktoriyel = function fa(n) { return n < 2 ? 1 : n * fa(n-1) };
+          </br>
+          console.log(faktoriyel(3));
+        </h4>
+        <p> Fonksiyon ifadeleri, bir fonksiyon diğer fonksiyona parametre olarak geçilirken oldukça elverişlidir. Aşağıdaki örnekte map fonksiyonu tanımlanmış ve ilk parametresinde başka bir fonksiyonu parametre olarak almıştır: </p>
+        <h4>
+          function map(f,d) {
+          </br>
+          var sonuç = [], // Yeni bir dizi
+          </br>
+          i;
+          </br>
+          for (i = 0; i != d.length; i++)
+          </br>
+          sonuç[i] = f(d[i]);
+          </br>
+          return sonuç;
+          </br>
+          }
+        </h4>
+        <p> Bir nesnenin özelliği olan fonksiyona metot adı verilir. </p>
+    </div>
+    <div class="special">
+      <h3> Fonksiyonları Çağırma </h3>
+      <p> Bir fonksiyonu tanımlamakla o fonksiyon çalışmaz. Fonksiyonu tanımlamak kısaca, o fonksiyona bir isim vermek ve o fonkisyon çağırıldığında bizim için hangi eylemleri yapması gerektiğini belirtmektir. Fonksiyonu çağırmak, bu belirlenmiş eylemleri bizim o fonksiyona verdiğimiz parametrelerin de kullanılmasıyla gerçekleştirir.  Örneğin,  karesiniAl diye bir fonksiyon tanımladığınızda, o fonksiyonu aşağıdaki gibi çağırabilirsiniz: </p>
+      <h4>
+        karesiniAl(5);
+      </h4>
+      <p> Bu ifade, fonksiyona parametre olarak 5 sayısını yollayarak çağırır. Fonksiyon, tanımlanırken belirttiğimiz eylemleri yapar ve bize 25 değerini döndürür.</p>
+      <p> Fonksiyonlar çağrıldıklarında bir alanda olmalıdılar, fakat fonksiyon bildirimi kaldırılabilir, örnekteki gibi: </p>
+      <h4>
+        console.log(square(5));
+        </br>
+        /* ... */
+        </br>
+        function square(n) { return n * n } 
+      </h4>
+      <p> Bir fonksiyon kendini çağırabilir. Örneğin, burada faktöriyelleri yinelemeli olarak hesaplayan bir fonksiyon var. </p>
+      <h4>
+        function factorial(n){
+        </br>
+        if ((n === 0) || (n === 1))
+        </br>
+        return 1;
+        </br>
+        else
+        </br>
+        return (n * factorial(n - 1));
+        </br>
+        }
+      </h4>
+      <p> Fonksiyonları  çağırmanın başka yolları da var. Bir fonksiyonun dinamik olarak çağrılması gerektiği veya bir fonksiyonun argümanlarının sayısının değişebileceği veya fonksiyon çağrısının içeriğinin çalışma zamanında belirlenen belirli bir nesneye ayarlanması gerektiği durumlar vardır. Fonksiyonların kendileri nesneler olduğu ve bu nesnelerin sırasıyla yöntemleri olduğu anlaşılıyor. </p>
+    </div>
+    <div class="special">
+      <h3> Fonksiyon Kapsamı  </h3>
+      <p> Bir fonksiyon içinde tanımlanmış değişkenlere, fonksiyonun dışındaki herhangi bir yerden erişilemez, çünkü değişken sadece fonksiyon kapsamında tanımlanır. Bununla birlikte, bir fonksiyon tanımlandığı kapsamda tanımlanan tüm değişkenlere ve fonksiyonlara erişebilir. Başka bir deyişle, global kapsamda tanımlanan bir fonksiyon, global kapsamda tanımlanan tüm değişkenlere erişebilir. Başka bir fonksiyonun içinde tanımlanmış bir fonksiyon, ana fonksiyonunda tanımlanan tüm değişkenlere ve ana fonksiyonun erişebildiği herhangi bir değişkene de erişebilir. </p>
+    </div>
+    <div class="special">
+      <h3> Kapsam Ve Fonksiyon Yığını  </h3>
+      <p> Bir fonksiyon kendisine başvurabilir ve kendisini arayabilir. Bir işlevin kendisine başvurması için üç yol vardır:
+        </br>
+        1- fonksiyonun adı
+        </br>
+        2- arguments.callee
+        </br>
+        3- fonksiyona başvuran bir kapsam içi değişken  </p>
+    <p> Kendisini çağıran fonksiyona özyinelemeli fonksiyon denir. Bazı açılardan, özyineleme bir döngüye benzer. Her ikisi de aynı kodu birkaç kez uygular ve her ikisi de bir koşul gerektirir (bu, sonsuz bir döngüden kaçınmak veya daha doğrusu bu durumda sonsuz özyinelemeden kaçınmak için). Örneğin, aşağıdaki döngü: </p> 
+    <h4>
+      var x = 0;
+      </br>
+      while (x < 10) { // "x < 10" is the loop condition
+      </br>
+      // do stuff
+      </br>
+      x++;
+      </br>
+      }
+    </h4>
+    <p> Herhangi bir özyinelemeli algoritmayı özyinelemeli olmayan bir algoritmaya dönüştürmek mümkündür, ancak çoğu zaman mantık çok daha karmaşıktır ve bunu yapmak bir yığının kullanılmasını gerektirir. Aslında, özyinelemenin kendisi bir yığın kullanır.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

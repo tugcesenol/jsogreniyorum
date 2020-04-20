@@ -1,0 +1,43 @@
+﻿body {
+    background-color: #DCDCDC;
+}
+
+h3 {
+    clear: both;
+    font-size: 2.0em;
+    color: black;
+    background: inherit;
+    padding: 0px 10px;
+    margin: 20px;
+}
+
+#main {
+    width: 900px;
+    margin: 25px auto 0 auto;
+}
+
+#right {
+    float: left;
+    padding: 10px 0 10px 10px;
+}
+
+.special h3 {
+    color: #000;
+    background: #fff;
+}
+
+.special h4 {
+    font-size: 18px;
+    color: #000;
+    background: #E6E6FA;
+}
+
+.special p {
+    font-size: 23px;
+}
+
+.special h1 {
+    text-align: center;
+    color: #000;
+    background: #fff;
+}
